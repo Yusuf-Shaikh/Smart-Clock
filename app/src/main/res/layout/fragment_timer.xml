@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TimerFragment"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryDark">
+
+    <EditText
+        android:id="@+id/getTime"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:inputType="number"
+        android:hint="Enter time in minutes"
+        android:textColor="#808080"
+        android:textColorHint="#949494"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:maxLength="4"
+        android:background="@drawable/edittextbg"/>
+
+    <Button
+        android:id="@+id/setTimer"
+        android:layout_marginTop="10dp"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:text="Set Timer"
+        android:textColor="@color/colorAccent"
+        android:textSize="15dp"
+        android:background="@drawable/edittextbg"/>
+
+    <TextView
+        android:id="@+id/timerdisplaytime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:text="00:00"
+        android:textSize="60dp"
+        android:layout_marginTop="100dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/timerplay"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/roundbutton"
+            android:src="@drawable/ic_play"
+            android:visibility="invisible"/>
+
+        <ImageButton
+            android:id="@+id/timerpause"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/play"
+            android:background="@drawable/roundbutton"
+            android:src="@drawable/ic_baseline_pause_24"
+            android:visibility="invisible"/>
+
+        <ImageButton
+            android:id="@+id/timerreset"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@+id/add"
+            android:background="@drawable/roundbutton"
+            android:layout_marginLeft="20dp"
+            android:visibility="invisible"
+            android:src="@drawable/ic_baseline_replay_24" />
+
+    </LinearLayout>
+</LinearLayout>
