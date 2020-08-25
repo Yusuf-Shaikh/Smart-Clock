@@ -34,12 +34,9 @@ public class AlarmService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+
         NotificationManager notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
-
-        SharedPreferences sharedPreferences = getSharedPreferences("musicname",MODE_PRIVATE);
-        String Music = sharedPreferences.getString("music","Default");
-
-        Intent intent1 = new Intent(this,RingActivity.class);
+        Intent intent1 = new Intent(this,QuizActivity.class);
         intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(this,
                 0,intent1,PendingIntent.FLAG_UPDATE_CURRENT);
@@ -51,6 +48,9 @@ public class AlarmService extends Service {
                 .setAutoCancel(true)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
         notificationManager.notify(0,builder.build());
+
+        SharedPreferences sharedPreferences = getSharedPreferences("musicname",MODE_PRIVATE);
+        String Music = sharedPreferences.getString("music","Default");
 
         if(Music.equals("Music1"))
         {
@@ -65,8 +65,7 @@ public class AlarmService extends Service {
             alarm.start();
         }
 
-        long[] pattern = { 0, 100, 1000 };
-        vibrator.vibrate(pattern, 0);
+        vibrator.vibrate(1000);
         return START_STICKY;
     }
 
