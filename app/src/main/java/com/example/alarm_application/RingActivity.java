@@ -22,7 +22,6 @@ public class RingActivity extends AppCompatActivity {
                 Intent intentService = new Intent(getApplicationContext(), AlarmService.class);
                 getApplicationContext().stopService(intentService);
                 RingActivity.this.finish();
-                System.exit(0);
             }
         });
 
